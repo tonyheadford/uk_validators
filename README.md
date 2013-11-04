@@ -1,6 +1,9 @@
-# UkValidators
+# UK Validators
 
-TODO: Write a gem description
+This library contains validators for the following UK-centric data:
+
+ * National Insurance Number
+
 
 ## Installation
 
@@ -12,13 +15,14 @@ And then execute:
 
     $ bundle
 
-Or install it yourself as:
-
-    $ gem install uk_validators
-
 ## Usage
 
-TODO: Write usage instructions here
+### National Insurance Number (Nino)
+
+Simply add the following to your model
+
+    validates :my_nino_attribute, nino: true
+
 
 ## Contributing
 

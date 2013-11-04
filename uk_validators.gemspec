@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["tony@binarycircus.com"]
   spec.description   = %q{Rails Validations for typically UK specific data}
   spec.summary       = %q{Rails validations for UK data }
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/tonyheadford/uk_validators"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
