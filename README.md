@@ -34,7 +34,7 @@ end
 
 The default error message is `is not a valid National Insurance No.`
 
-This can be translated in the same was as any other Rails valiation message using the key **:nino**.
+This can be translated in the same was as any other Rails validation message using the key **:nino**.
 
 For the example User model above, the customised en.yml would be:
 
@@ -67,7 +67,7 @@ end
 
 The default error message is `is not a valid postcode`
 
-This can be translated in the same was as any other Rails valiation message using the key **:postcode**.
+This can be translated in the same was as any other Rails validation message using the key **:postcode**.
 
 For the example Address model above, the customised en.yml would be:
 
