@@ -6,11 +6,11 @@ class TestNinoValidator < MiniTest::Unit::TestCase
   end
 
   def test_valid_ninos
-    valid_ninos.each { |nino| assert User.new(ni_number: nino).valid?, "Bad nino #{nino}" }
+    valid_ninos.each { |nino| assert User.new(ni_number: nino).valid?, "Nino should be valid: #{nino}" }
   end
 
   def test_invalid_ninos
-    invalid_ninos.each { |nino| assert User.new(ni_number: nino).invalid? }
+    invalid_ninos.each { |nino| assert User.new(ni_number: nino).invalid?, "Nino should be invalid: #{nino}" }
   end
 
 private
@@ -21,7 +21,7 @@ private
       'bb940321b',
       'cc987654c',
       'ee903221d',
-      'gg849302 ', # apparently space is valid for the final character
+      'gg849302 ', # space is valid for the final character if it is not known
       'hh123849a',
       'jj123849b',
       'kk123849c',
