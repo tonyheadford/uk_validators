@@ -5,6 +5,7 @@ This library contains Rails 3 custom validators for the following UK-centric dat
  * National Insurance Number
  * Post Code
  * Driving Licence Number
+ * Passport Number
 
 
 ## Installation
@@ -112,6 +113,36 @@ For the example User model above, the customised en.yml would be:
                 licence_number:
                   driving_licence: "is not valid"
 
+
+## Passport Number
+A UK passport number is simply made up of 9 numeric characters.
+
+References: [NHS Data Dictionary](http://www.datadictionary.nhs.uk/version2/data_dictionary/data_field_notes/p/passport_number__o_new_c__de.asp?shownav=1), [highprogrammer.com](http://www.highprogrammer.com/alan/numbers/mrp.html)
+
+### Usage
+
+```ruby
+class HolidayMaker < ActiveRecord::Base
+  validates :passport, passport_number: true
+end
+```
+
+### I18n
+
+The default error message is `is not a valid Passport No.`
+
+This can be translated in the same was as any other Rails validation message using the key **:passport_number**.
+
+For the example HolidayMaker model above, the customised en.yml would be:
+
+    en:
+      activerecord:
+        errors:
+          models:
+            holiday_maker:
+              attributes:
+                passport:
+                  passport_number: "is not valid"
 
 
 
