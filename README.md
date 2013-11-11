@@ -4,6 +4,7 @@ This library contains Rails 3 custom validators for the following UK-centric dat
 
  * National Insurance Number
  * Post Code
+ * Driving Licence Number
 
 
 ## Installation
@@ -79,6 +80,37 @@ For the example Address model above, the customised en.yml would be:
               attributes:
                 postal_code:
                   postcode: "is not valid"
+
+
+## Driving Licence Number
+Validates the format of a UK Driving Licence Number covering the format used in England, Scotland and Wales. Northen Ireland has a different format containing 8 random alphanumeric characters.
+
+References: [DVLA](http://www.direct.gov.uk/prod_consum_dg/groups/dg_digitalassets/@dg/@en/@motor/documents/digitalasset/dg_068626.pdf), [uk-osint.net](http://www.uk-osint.net/usefulbits.html#How%20To%20Check%20UK%20Driving%20Licences)
+
+### Usage
+
+```ruby
+class User < ActiveRecord::Base
+  validates :licence_number, driving_licence: true
+end
+```
+
+### I18n
+
+The default error message is `is not a valid Driving Licence No.`
+
+This can be translated in the same was as any other Rails validation message using the key **:driving_licence**.
+
+For the example User model above, the customised en.yml would be:
+
+    en:
+      activerecord:
+        errors:
+          models:
+            user:
+              attributes:
+                licence_number:
+                  driving_licence: "is not valid"
 
 
 
